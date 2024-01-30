@@ -1,0 +1,20 @@
+<ul class="TopNav">
+  <li><a href="#">About</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Works</a></li>
+  <li><a href="#">Testimonials</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+<style lang="sass">
+  @use "../styles/variables"
+  .TopNav
+    list-style: none
+    margin: 0
+    padding: 0
+    display: flex
+  .TopNav > li
+    margin-right: 1rem
+    font-size: variables.$fontsize-small
+  .TopNav a
+    color: black
+</style>

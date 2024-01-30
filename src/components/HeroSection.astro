@@ -1,0 +1,99 @@
+<section class="HeroSection" id="about">
+  <div class="o-container">
+    <div class="HeroSection__row">
+      <div class="HeroSection__col">
+        <div class="HeroSection__hi">Hi,</div>
+        <div class="HeroSection__content">
+          my name is <span>Hamdi.</span> I am a web developer based in
+          <span>East Java, Indonesia.</span>
+          <p>
+            I provide website <span>design and development</span> services
+            that <span>complement your business!</span>
+          </p>
+        </div>
+      </div>
+      <div class="HeroSection__col">
+        <div class="HeroSection__pic">
+          <img
+            width="256"
+            height="256"
+            src="./assets/headshot.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style lang="sass">
+  @use "../styles/variables"
+
+  .HeroSection__row
+    display: grid
+    grid-template-columns: 2fr 1fr
+    grid-gap: 2rem
+    background: #eee
+    padding: 2rem
+    border-radius: 1rem
+
+  .HeroSection__col
+    padding-top: 1px
+
+  .HeroSection__pic
+    display: block
+    position: relative
+    margin-top: 4rem
+
+  .HeroSection__pic img
+    display: block
+    width: 100%
+    height: auto
+    aspect-ratio: 1/1
+    max-width: 256px
+    border: 10px solid variables.$color-brand-1
+    background-color: variables.$color-brand-1
+    object-fit: cover
+    border-radius: 50%
+
+  .HeroSection__hi
+    color: variables.$color-text-black
+    font-size: 3rem
+    font-weight: 600
+    margin-bottom: 1rem
+    line-height: 1
+    margin-top: -10px
+
+  .HeroSection__content
+    color: #333
+    font-size: 1.4rem
+
+  .HeroSection__content span
+    color: variables.$color-brand-1
+
+  @media screen and (max-width: variables.$breakpoint-md)
+    .HeroSection__content
+      font-size: 1.2rem
+
+  @media screen and (max-width: variables.$breakpoint-sm)
+    .HeroSection__row
+      grid-template-columns: 1fr
+      grid-gap: 1rem
+
+    .HeroSection__col:first-child
+      order: 2
+
+    .HeroSection__col:last-child
+      order: 1
+
+    .HeroSection__hi
+      font-size: 2.2rem
+      margin-top: 0
+      margin-bottom: 0.5rem
+
+    .HeroSection__pic
+      margin-top: 0
+
+    .HeroSection__pic img
+      max-width: 180px
+
+</style>

@@ -1,0 +1,31 @@
+---
+interface Props {
+	title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="WhyItem">
+  <div class="WhyItem__icon"></div>
+  <div class="WhyItem__title">
+    {title}
+  </div>
+  <div class="WhyItem__desc u-text-normal">
+    {description}
+  </div>
+</div>
+
+<style lang="sass">
+  @use '../styles/variables'  
+  .WhyItem
+    border: 6px solid #dce2eb
+    border-radius: 1rem
+    padding: 1rem
+    color: variables.$color-text-black
+  .WhyItem__title
+    font-size: variables.$fontsize-big
+    font-weight: 700
+    margin-bottom: 0.5rem    
+</style>
