@@ -1,0 +1,69 @@
+@use "variables"
+
+.c-hero__row
+  display: grid
+  grid-template-columns: 2fr 1fr
+  grid-gap: 2rem
+  background: #eee
+  padding: 2rem
+  border-radius: 1rem
+
+.c-hero__col
+  padding-top: 1px
+
+.c-hero__pic
+  display: block
+  position: relative
+  margin-top: 4rem
+
+.c-hero__pic img
+  display: block
+  width: 100%
+  height: auto
+  aspect-ratio: 1/1
+  max-width: 256px
+  border: 10px solid variables.$color-brand-1
+  background-color: variables.$color-brand-1
+  object-fit: cover
+  border-radius: 50%
+
+.c-hero__hi
+  color: variables.$color-text-black
+  font-size: 3rem
+  font-weight: 600
+  margin-bottom: 1rem
+  line-height: 1
+  margin-top: -10px
+
+.c-hero__content
+  color: #333
+  font-size: 1.4rem
+
+.c-hero__content span
+  color: variables.$color-brand-1
+
+@media screen and (max-width: variables.$breakpoint-md)
+  .c-hero__content
+    font-size: 1.2rem
+
+@media screen and (max-width: variables.$breakpoint-sm)
+  .c-hero__row
+    grid-template-columns: 1fr
+    grid-gap: 1rem
+
+  .c-hero__col:first-child
+    order: 2
+
+  .c-hero__col:last-child
+    order: 1
+
+  .c-hero__hi
+    font-size: 2.2rem
+    margin-top: 0
+    margin-bottom: 0.5rem
+
+  .c-hero__pic
+    margin-top: 0
+
+  .c-hero__pic img
+    max-width: 180px
