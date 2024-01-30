@@ -1,0 +1,40 @@
+---
+interface Props {
+  by: string;
+  body: string;
+  stars: number;
+}
+
+const { by, body, stars } = Astro.props;
+---
+
+<div class="TetimoItem">
+  <div class="TetimoItem__stars">
+    <img src="./assets/stars-50.svg" alt="" />
+  </div>
+  <div class="TetimoItem__body">
+    {body}
+  </div>
+  <div class="TetimoItem__by">{by}</div>
+</div>
+
+<style lang="sass">
+  @use "../styles/variables"
+  .TetimoItem__stars
+    margin-bottom: 1rem
+  .TetimoItem__stars img
+    display: block
+    width: 7rem
+    height: auto
+  .TetimoItem__body
+    font-size: variables.$fontsize-base
+    font-style: italic
+    font-weight: 300
+    color: variables.$color-text-darkgrey
+  .TetimoItem__by
+    margin-top: 1rem
+    font-weight: 700
+    font-size: variables.$fontsize-small
+  .TetimoItem__by::before
+    content: "— "
+</style>

@@ -1,0 +1,37 @@
+---
+interface Props {
+	title: string;
+  thumbnail: string;
+}
+
+const { title, thumbnail } = Astro.props;
+---
+
+<div class="PortfolioItem">
+  <a data-work-link href="#" data-target="work-first.html">
+    <span class="PortfolioItem__pic">
+      <img src={thumbnail} alt={title} />
+    </span>
+    <span class="PortfolioItem__title">{title}</span>
+  </a>
+</div>
+
+<style lang="sass">
+  @use "../styles/variables"
+  $radius: 0.4rem
+  .PortfolioItem__title
+    display: block
+    background: variables.$color-black
+    color: variables.$color-text-lightgrey
+    display: red
+    border-radius: 0 0 $radius $radius
+    padding: 0.4rem 0.7rem
+  .PortfolioItem__pic
+    display: block
+    aspect-ratio: 3 / 2
+  .PortfolioItem__pic img
+    border-radius: $radius $radius 0 0
+    display: block
+    aspect-ratio: 3 / 2
+    object-fit: cover
+</style>

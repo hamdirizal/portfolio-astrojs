@@ -4,21 +4,23 @@ import WhyItem from "../components/WhyItem.astro";
 
 <section class="WhySection">
   <div class="o-container">
-    <div class="WhySection__row">
-      <ul class="WhySection__list">
-        <li>
-          <WhyItem
-            title="Functional Design"
-            description={`Each design is hand-crafted to suit the need of the business I am working with.`}
-          />
-        </li>
-        <li>
-          <WhyItem
-            title="Bold Ideas"
-            description={`I like to experiment and keep up to date with new and emerging technology.`}
-          />
-        </li>
-      </ul>
+    <div class="WhySection__box">
+      <div class="WhySection__row">
+        <ul class="WhySection__list">
+          <li>
+            <WhyItem
+              title="Functional Design"
+              description={`Each design is hand-crafted to suit the need of the business I am working with.`}
+            />
+          </li>
+          <li>
+            <WhyItem
+              title="Bold Ideas"
+              description={`I like to experiment and keep up to date with new and emerging technology.`}
+            />
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -28,9 +30,14 @@ import WhyItem from "../components/WhyItem.astro";
 
   .WhySection
     margin-top: 2rem
+  .WhySection__box
+    border-radius: variables.$panel-radius
+    padding: 2rem
+    color: variables.$color-text-white
+    background: variables.$color-brand-1
   .WhySection__list
     list-style: none
     display: grid
     grid-template-columns: repeat(2, 1fr)
-    grid-gap: 1rem
+    grid-gap: 2rem
 </style>

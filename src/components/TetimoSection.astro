@@ -1,0 +1,66 @@
+---
+import TetimoItem from "../components/TetimoItem.astro";
+
+let testimonials = [
+  {
+    stars: 5,
+    body: "Hamdi is hands down the best freelancer I've ever worked with on Upwork. Great communication, great suggestions for improvement, great execution. Seriously, you will not be disappointed.",
+    by: "Anonymous Client",
+  },
+  {
+    stars: 5,
+    body: "I've worked with Hamdi on a number of HTML projects and each time I am very impressed with his coding. He has some of the neatest and most functional code around. Thank you very much for your professionalism.",
+    by: "Anonymous Client",
+  },
+  {
+    stars: 5,
+    body: "This guy is a great programmer and professional. His understanding of projects and execution is excellent. Not only was the project perfectly completed, documented and explained, but the implementation was also ahead of schedule. I would definitely recommend him for any project",
+    by: "Anonymous Client",
+  },
+  {
+    stars: 5,
+    body: "He was very responsive and was an expert in figuring out my wordpress problems. It was a smaller project, but he devoted his entire attention to completing it quickly and just as I wanted. He followed up to make sure everything was as I wanted. Thanks Hamdi!",
+    by: "Anonymous Client",
+  },
+];
+---
+
+<section class="TetimoSection" id="testimonials">
+  <div class="o-container">
+    <div class="TetimoSection__box">
+      <h2 class="o-section-title TetimoSection__title">Testimonials</h2>
+      <ul class="TetimoSection__list">
+        {
+          testimonials.map((item) => {
+            return (
+              <li>
+                <TetimoItem by={item.by} body={item.body} stars={50} />
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style lang="sass">
+  @use "../styles/variables"
+  .TetimoSection
+    margin-top: 2rem
+  .TetimoSection__box
+    border: 6px solid #dce2eb
+    border-radius: variables.$panel-radius
+    padding: 2rem
+    color: variables.$color-text-black
+  .TetimoSection__title
+    margin-top: 0
+    margin-bottom: 2rem
+  .TetimoSection__list
+    list-style: none
+    margin: 0
+    padding: 0
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 3rem
+</style>

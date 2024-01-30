@@ -1,0 +1,52 @@
+---
+import PortfolioItem from "./PortfolioItem.astro"
+
+let portfolios = [
+  {
+    title: "Figma to HTML conversion",
+    image: "/assets/work-1.jpg",
+    link: "/work-first.html"
+  },
+  {
+    title: "Lorem Ipsum",
+    image: "/assets/work-2.jpg",
+    link: "/work-second.html"
+  }
+]
+
+---
+
+<section class="PortfolioSection" id="works">
+  <div class="o-container">
+    <div class="PortfolioSection__box">
+    <h2 class="o-section-title PortfolioSection__title">
+      Past Projects
+    </h2>
+    <ul class="PortfolioSection__list">
+      {
+        portfolios.map(item => (
+          <PortfolioItem title={item.title} thumbnail={item.image} />
+        ))
+      }
+    </ul>
+  </div>
+  </div>
+</section>
+
+<style lang="sass">
+  @use "../styles/variables"
+
+  .PortfolioSection
+    margin-top: 2rem
+  .PortfolioSection__title
+    margin-bottom: 1rem
+    color: variables.$color-text-white
+  .PortfolioSection__box
+    padding: 2rem
+    background: #1b2231
+    border-radius: variables.$panel-radius
+  .PortfolioSection__list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 2rem
+</style>
