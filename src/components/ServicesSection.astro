@@ -1,44 +1,68 @@
-<section class="c-services-section" id="services">
-  <div class="c-services-section__overlay"></div>
+---
+import ServiceItem from "../components/ServiceItem.astro";
+
+let services = [
+  {
+    title: "Web Design",
+    description:
+      "Web Design for Small, Medium and NDIS Support Provider businesses.",
+  },
+  {
+    title: "Web Development",
+    description:
+      "Web Design for Small, Medium and NDIS Support Provider businesses.",
+  },
+  {
+    title: "SEO",
+    description:
+      "Web Design for Small, Medium and NDIS Support Provider businesses.",
+  },
+  {
+    title: "Administration",
+    description:
+      "Web Design for Small, Medium and NDIS Support Provider businesses.",
+  },
+];
+---
+
+<section class="ServiceSection" id="services">
+  <div class="ServiceSection__overlay"></div>
   <div class="o-container">
-    <div class="c-services-section__box">
-      <h2 class="o-section-title c-services-section__title u-animate-in-1">
-        What I Do
-      </h2>
-      <ul class="c-services-section__list u-animate-in-2">
-        <li>
-          <div class="c-service-item">
-            <h4 class="c-service-item__title u-text-brave">Web Design</h4>
-            <div class="c-service-item__desc">
-              Web Design for Small, Medium and NDIS Support Provider businesses.
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="c-service-item">
-            <h4 class="c-service-item__title u-text-brave">Web Development</h4>
-            <div class="c-service-item__desc">
-              Web Design for Small, Medium and NDIS Support Provider businesses.
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="c-service-item">
-            <h4 class="c-service-item__title u-text-brave">SEO</h4>
-            <div class="c-service-item__desc">
-              Web Design for Small, Medium and NDIS Support Provider businesses.
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="c-service-item">
-            <h4 class="c-service-item__title u-text-brave">Administration</h4>
-            <div class="c-service-item__desc">
-              Web Design for Small, Medium and NDIS Support Provider businesses.
-            </div>
-          </div>
-        </li>
+    <div class="ServiceSection__box">
+      <h2 class="o-section-title ServiceSection__title">What I Do</h2>
+      <ul class="ServiceSection__list">
+        {
+          services.map((service) => (
+            <li>
+              <ServiceItem
+                title={service.title}
+                description={service.description}
+              />
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
 </section>
+
+<style lang="sass">
+  @use '../styles/variables'
+
+  .ServiceSection
+    margin-top: 2rem
+  .ServiceSection__box
+    border: 6px solid #dce2eb
+    border-radius: 1rem
+    padding: 2rem
+    color: variables.$color-text-black
+  .ServiceSection__title
+    margin-bottom: 1rem
+  .ServiceSection__list
+    list-style: none
+    padding: 0
+    margin: 0
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 2rem
+</style>

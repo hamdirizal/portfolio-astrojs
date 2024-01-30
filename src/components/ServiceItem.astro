@@ -1,0 +1,19 @@
+---
+interface Props {
+	title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+<div class="ServiceItem">
+  <h4 class="ServiceItem__title">{title}</h4>
+  <div class="ServiceItem__desc">
+    {description}
+  </div>
+</div>
+
+<style lang="sass">
+  .ServiceItem__title
+    margin-bottom: 0.5rem
+</style>
