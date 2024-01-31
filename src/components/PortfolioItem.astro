@@ -2,13 +2,14 @@
 interface Props {
 	title: string;
   thumbnail: string;
+  url: string;
 }
 
-const { title, thumbnail } = Astro.props;
+const { url, title, thumbnail } = Astro.props;
 ---
 
 <div class="PortfolioItem">
-  <a data-work-link href="#" data-target="work-first.html">
+  <a data-work-link href="#" data-target={url}>
     <span class="PortfolioItem__pic">
       <img src={thumbnail} alt={title} />
     </span>

@@ -5,12 +5,12 @@ let portfolios = [
   {
     title: "Figma to HTML conversion",
     image: "/assets/work-1.jpg",
-    link: "/work-first.html"
+    url: "/work-first"
   },
   {
     title: "Lorem Ipsum",
     image: "/assets/work-2.jpg",
-    link: "/work-second.html"
+    url: "/work-second"
   }
 ]
 
@@ -25,7 +25,7 @@ let portfolios = [
     <ul class="PortfolioSection__list">
       {
         portfolios.map(item => (
-          <PortfolioItem title={item.title} thumbnail={item.image} />
+          <PortfolioItem url={item.url} title={item.title} thumbnail={item.image} />
         ))
       }
     </ul>
