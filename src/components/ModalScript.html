@@ -1,0 +1,38 @@
+<script>
+  (function () {
+    let myModal = document.querySelector("[data-mymodal]");
+    let myModalContent = document.querySelector("[data-mymodal-content]");
+    let closeButton = document.querySelector("[data-close-btn]");
+    let body = document.querySelector("body");
+
+    if(!myModal || !myModalContent || !closeButton || !body) return;
+
+    const workLinks = document.querySelectorAll("[data-work-link]");
+
+    if(!workLinks || workLinks.length === 0) return;
+
+    workLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        myModal.showModal();
+        body.classList.add("is-modal-open");
+        let targetUrl = link.dataset.target;
+        myModalContent.innerHTML = "Loading..";
+        fetch(targetUrl)
+          .then((response) => response.text())
+          .then((html) => {
+            myModalContent.innerHTML = html;
+          });
+      });
+    });
+
+    myModal.addEventListener("close", (e) => {
+      body.classList.remove("is-modal-open");
+      myModalContent.innerHTML = "";
+    });
+
+    closeButton.addEventListener("click", (e) => {
+      myModal.close();
+    });
+  })();
+</script>

@@ -41,7 +41,8 @@ textarea
   padding: 0.5rem
   color: variables.$color-text-black
   font-family: variables.$font-sans
-  border-radius: 0.2rem
+  font-size: variables.$fontsize-base
+  border-radius: variables.$input-radius
   border: 0 none
 
 .o-container
@@ -53,6 +54,21 @@ textarea
   font-size: variables.$fontsize-bigger
   font-weight: 700
   font-family: variables.$font-sans
+
+.c-button-primary
+  border: 0 none
+  background: #05ff99
+  color: black
+  padding: 0.5rem 1rem
+  cursor: pointer
+  transition: transform 0.2s ease-in-out
+  font-weight: 600
+  border-radius: variables.$input-radius
+  font-family: variables.$font-sans
+  font-size: variables.$fontsize-base
+.c-button-primary:hover,
+.c-button-primary:active
+  transform: scale(1.05)
 
 @media screen and (max-width: variables.$breakpoint-md)
   .o-container

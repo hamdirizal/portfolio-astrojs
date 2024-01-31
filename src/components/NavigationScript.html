@@ -1,0 +1,54 @@
+<script>
+  let myModal = document.querySelector("[data-mymodal]");
+  let myModalContent = document.querySelector("[data-mymodal-content]");
+  let body = document.querySelector("body");
+  let closeButton = document.querySelector("[data-close-btn]");
+
+  const workLinks = document.querySelectorAll("[data-work-link]");
+
+  workLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      myModal.showModal();
+      body.classList.add("is-modal-open");
+      let targetUrl = link.dataset.target;
+      myModalContent.innerHTML = "Loading..";
+      fetch(targetUrl)
+        .then((response) => response.text())
+        .then((html) => {
+          myModalContent.innerHTML = html;
+        });
+    });
+  });
+
+  myModal.addEventListener("close", (e) => {
+    body.classList.remove("is-modal-open");
+    myModalContent.innerHTML = "";
+  });
+
+  closeButton.addEventListener("click", (e) => {
+    myModal.close();
+  });
+
+  let navToggler = document.querySelector("[data-nav-toggler]");
+  let navModal = document.querySelector("[data-nav-modal]");
+  let navClose = document.querySelector("[data-nav-close]");
+  navToggler.addEventListener("click", (e) => {
+    e.preventDefault();
+    navModal.showModal();
+    body.classList.add("is-modal-open");
+  });
+  navClose.addEventListener("click", (e) => {
+    navModal.close();
+  });
+  navModal.addEventListener("close", (e) => {
+    body.classList.remove("is-modal-open");
+  });
+  let navItems = document.querySelectorAll("[data-nav-item]");
+  navItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      navModal.close();
+    });
+  });
+
+</script>

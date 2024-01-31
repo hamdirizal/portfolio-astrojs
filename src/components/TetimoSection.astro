@@ -51,7 +51,7 @@ let testimonials = [
   .TetimoSection__box
     border: 6px solid #dce2eb
     border-radius: variables.$panel-radius
-    padding: 2rem
+    padding: variables.$panel-padding
     color: variables.$color-text-black
   .TetimoSection__title
     margin-top: 0
@@ -62,5 +62,13 @@ let testimonials = [
     padding: 0
     display: grid
     grid-template-columns: repeat(2, 1fr)
-    grid-gap: 3rem
+    grid-gap: 3rem 
+
+  
+  @media screen and (max-width: variables.$breakpoint-lg)
+    .TetimoSection__box
+      padding: variables.$panel-padding-md
+    .TetimoSection__list
+      grid-template-columns: 1fr
+    
 </style>

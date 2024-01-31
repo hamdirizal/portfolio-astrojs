@@ -32,12 +32,20 @@ import WhyItem from "../components/WhyItem.astro";
     margin-top: 2rem
   .WhySection__box
     border-radius: variables.$panel-radius
-    padding: 2rem
+    padding: variables.$panel-padding
     color: variables.$color-text-white
     background: variables.$color-brand-1
+    container-type: inline-size
   .WhySection__list
     list-style: none
     display: grid
     grid-template-columns: repeat(2, 1fr)
     grid-gap: 2rem
+  @media screen and (max-width: variables.$breakpoint-lg)
+    .WhySection__box
+      padding: variables.$panel-padding-md
+
+  @container (max-width: 540px)
+    .WhySection__list
+      grid-template-columns: 1fr
 </style>

@@ -5,8 +5,8 @@ let currentYear = new Date().getFullYear();
 <div class="Footer">
   <div class="o-container">
     <div class="Footer__box">
-      <div>Download Resume</div>
-      <div>&copy; {currentYear} Hamdi Rizal</div>
+      <div class="Footer__resume">Download Resume</div>
+      <div class="Footer__copyright">&copy; {currentYear} Hamdi Rizal</div>
     </div>
   </div>
 </div>
@@ -21,4 +21,11 @@ let currentYear = new Date().getFullYear();
   .Footer__box
     display: flex
     justify-content: space-between
+
+  @media screen and (max-width: variables.$breakpoint-md)
+    .Footer__box
+      display: block
+      text-align: center      
+    .Footer__copyright
+      margin-top: 1rem
 </style>

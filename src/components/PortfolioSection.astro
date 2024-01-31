@@ -42,11 +42,18 @@ let portfolios = [
     margin-bottom: 1rem
     color: variables.$color-text-white
   .PortfolioSection__box
-    padding: 2rem
+    padding: variables.$panel-padding
     background: #1b2231
     border-radius: variables.$panel-radius
   .PortfolioSection__list
     display: grid
     grid-template-columns: repeat(2, 1fr)
-    grid-gap: 2rem
+    grid-gap: 2rem  
+  
+  @media screen and (max-width: variables.$breakpoint-lg)
+    .PortfolioSection__box
+      padding: variables.$panel-padding-md
+  @media screen and (max-width: variables.$breakpoint-md)    
+    .PortfolioSection__list
+      grid-template-columns: 1fr
 </style>
