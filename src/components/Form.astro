@@ -1,49 +1,44 @@
 <form action="" class="Form">
   <div class="Form__grid">
-    <div class="Form__col">
-      <div class="Form__row">
-        <div class="Form__label">
-          <label>Full Name</label>
-        </div>
-        <div class="Form__control">
-          <input type="text" />
-        </div>
+    <div class="Form__cell">
+      <div class="Form__label">
+        <label>Full Name</label>
       </div>
-      <!-- .Form__row -->
-      <div class="Form__row">
-        <div class="Form__label">
-          <label>Email</label>
-        </div>
-        <div class="Form__control">
-          <input type="text" />
-        </div>
+      <div class="Form__control">
+        <input type="text" />
       </div>
-      <!-- .Form__row -->
-      <div class="Form__row">
-        <div class="Form__label">
-          <label>Website (optional)</label>
-        </div>
-        <div class="Form__control">
-          <input type="text" />
-        </div>
-      </div>
-      <!-- .Form__row -->
     </div>
-    <div class="Form__col">
-      <div class="Form__row">
-        <div class="Form__label">
-          <label>Comments / Questions</label>
-        </div>
-        <div class="Form__control">
-          <textarea name="" rows="6"></textarea>
-        </div>
+    <div class="Form__cell">
+      <div class="Form__label">
+        <label>Email</label>
       </div>
-      <!-- .Form__row -->
-      <div class="Form__row">
-        <button type="submit" class="c-button-primary"> Send Message</button>
+      <div class="Form__control">
+        <input type="text" />
       </div>
-      <!-- .Form__row -->
     </div>
+    <div class="Form__cell">
+      <div class="Form__label">
+        <label>Website (optional)</label>
+      </div>
+      <div class="Form__control">
+        <input type="text" />
+      </div>
+    </div>
+    <div class="Form__cell is-big">
+      <div class="Form__label">
+        <label>Comments / Questions</label>
+      </div>
+      <div class="Form__control">
+        <textarea name="" rows="6"></textarea>
+      </div>
+    </div>
+    <div class="Form__cell">
+      <div class="Form__label">
+        ----
+      </div>
+      <button type="submit" class="c-button-primary"> Send Message</button>
+    </div>
+    <!-- .Form__control -->
   </div>
 </form>
 
@@ -51,14 +46,27 @@
   @use "../styles/variables"
   .Form
     container-type: inline-size
-  .Form__row
-    margin-bottom: 1rem
   .Form__grid
     display: grid
-    grid-template-columns: 1fr 1fr
-    grid-gap: 2rem
+    grid-auto-flow: column
+    grid-template-rows: 1fr 1fr 1fr
+    grid-gap: 1rem 2rem
+  .Form__label
+    height: 1.5em
+    font-size: variables.$fontsize-small
+  .Form__cell
+    display: flex
+    flex-direction: column
+  .Form__cell.is-big
+    grid-row: span 2
+  
+  .Form__cell.is-big .Form__control
+    flex-grow: 1
+  .Form__cell.is-big textarea
+    min-height: 100%
+
   @container (max-width: 540px)
     .Form__grid
-      grid-template-columns: 1fr
-      grid-gap: 0
+      grid-auto-flow: row
+      grid-gap: 1rem
 </style>
