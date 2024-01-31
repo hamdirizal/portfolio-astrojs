@@ -32,8 +32,8 @@
     display: grid
     grid-template-columns: 2fr 1fr
     grid-gap: 2rem
-    background: variables.$color-bg-lightgrey
-    padding: 2rem
+    background: variables.$color-bg-lightgrey    
+    padding: variables.$panel-padding
     border-radius: variables.$panel-radius
 
   .HeroSection__col
@@ -70,11 +70,13 @@
   .HeroSection__content span
     color: variables.$color-brand-1
 
-  @media screen and (max-width: variables.$breakpoint-md)
+  @media screen and (max-width: variables.$breakpoint-lg)
+    .HeroSection__row      
+      padding: variables.$panel-padding-md
     .HeroSection__content
       font-size: 1.2rem
 
-  @media screen and (max-width: variables.$breakpoint-sm)
+  @media screen and (max-width: variables.$breakpoint-md)
     .HeroSection__row
       grid-template-columns: 1fr
       grid-gap: 1rem

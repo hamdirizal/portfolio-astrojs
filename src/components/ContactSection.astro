@@ -1,0 +1,32 @@
+---
+import Form from '../components/Form.astro'
+---
+<section class="ContactSection" id="contact">
+  <div class="o-container">
+    <div class="ContactSection__box">
+      <h2 class="o-section-title ContactSection__title">Let's Work Together</h2>
+      <div class="ContactSection__subtitle">We'd like to hear from you!</div>
+      <div class="ContactSection__form">
+        <Form />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="sass">
+  @use "../styles/variables"
+
+  .ContactSection
+    margin-top: 2rem
+  .ContactSection__box
+    background: variables.$color-brand-1
+    border-radius: variables.$panel-radius
+    color: variables.$color-text-white
+    padding: variables.$panel-padding
+  
+  @media screen and (max-width: variables.$breakpoint-lg)
+    .ContactSection__box
+      padding: variables.$panel-padding-md
+
+
+</style>

@@ -1,0 +1,24 @@
+---
+let currentYear = new Date().getFullYear();
+---
+
+<div class="Footer">
+  <div class="o-container">
+    <div class="Footer__box">
+      <div>Download Resume</div>
+      <div>&copy; {currentYear} Hamdi Rizal</div>
+    </div>
+  </div>
+</div>
+
+<style lang="sass">
+  @use "../styles/variables"
+  
+  .Footer
+    margin-top: 2rem
+    margin-bottom: 1rem
+    font-size: variables.$fontsize-small
+  .Footer__box
+    display: flex
+    justify-content: space-between
+</style>

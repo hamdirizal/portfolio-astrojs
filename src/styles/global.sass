@@ -41,7 +41,7 @@ textarea
   padding: 0.5rem
   color: variables.$color-text-black
   font-family: variables.$font-sans
-  border-radius: variables.$rounded-small
+  border-radius: 0.2rem
   border: 0 none
 
 .o-container
@@ -53,5 +53,9 @@ textarea
   font-size: variables.$fontsize-bigger
   font-weight: 700
   font-family: variables.$font-sans
+
+@media screen and (max-width: variables.$breakpoint-md)
+  .o-container
+    padding: 0 0.5rem
 
 
