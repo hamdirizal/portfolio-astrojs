@@ -54,8 +54,9 @@ let services = [
   .ServiceSection__box
     border: 6px solid #dce2eb
     border-radius: variables.$panel-radius
-    padding: 2rem
+    padding: variables.$panel-padding
     color: variables.$color-text-black
+    container-type: inline-size
   .ServiceSection__title
     margin-bottom: 1rem
   .ServiceSection__list
@@ -65,4 +66,13 @@ let services = [
     display: grid
     grid-template-columns: repeat(2, 1fr)
     grid-gap: 2rem
+
+  @media screen and (max-width: variables.$breakpoint-lg)
+    .ServiceSection__box
+      padding: variables.$panel-padding-md
+
+  @container (max-width: 500px)
+    .ServiceSection__list
+      grid-template-columns: 1fr
+      grid-gap: 1rem
 </style>
